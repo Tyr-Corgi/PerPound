@@ -8,8 +8,11 @@
     "brand": "Stonewall Kitchen",
     "category": "Cookies",
     "description": "Maple-flavored Dutch waffle cookie with a gooey sea salt caramel center Traditionally known as stroopwafels Enjoy one as the Dutch do by letting it soften over a hot cup of tea or cocoa It all started in 1991 at a local farmers' market with a few dozen items that we'd finished hand-labeling only hours before. Fast-forward to today and Stonewall Kitchen is now home to an ever-growing family of like-minded lifestyle brands! Expertly made with premium ingredients, our products are the result of decades spent dreaming up, testing and producing only the very best in specialty foods and fine home living.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/378313627.webp",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/378313627.webp"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -21,8 +24,11 @@
     "brand": "Tumaro's",
     "category": "Tortillas & Wraps",
     "description": "Unlike oversized bagels and thick-cut sandwich breads, these Tumaro\u2019s Multi-Grain Tortillas have only 60 calories and four net carbs. Thin and flexible, these multi-grain wraps are perfect for making your favorite sandwich fillings the star of the show. Wrap up veggies, hummus and olives for a light midday meal, or fill one with scrambled eggs and salsa for a delicious breakfast burrito. With seven grams of dietary fiber each, these wraps give you the perfect base for a satisfying meal.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/312186414.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/312186414.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -34,8 +40,11 @@
     "brand": "Lillie's Q",
     "category": "Condiments & Sauces",
     "description": "This sweet, tangy sauce is a true Alabama white barbeque sauce with a pinch of cayenne. Chicken and fries are our favourite Ivory companions, but try it on any of your BBQ favourites. Free from artificial colours and flavours.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/314558031.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/314558031.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -47,8 +56,11 @@
     "brand": "Bella Maria",
     "category": "Nuts & Seeds",
     "description": "No description found.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/242882009.png",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/242882009.png"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -60,8 +72,11 @@
     "brand": "Inka Crops",
     "category": "Chips",
     "description": "Experience the bold and fiery flavors of Inka Crops Chile Picante Crunchy Giant Corn. This case contains six 4 oz packages of this irresistible snack. Each bite is a fusion of crunch and spice, combining the satisfying texture of giant corn kernels with a tantalizing Chile picante seasoning. These crunchy corn snacks are bursting with flavor, perfect for those who crave a spicy kick. Made from premium and all-natural ingredients, Inka Crops Crunchy Giant Corn offers a delicious and addictive snacking experience. Enjoy them on their own or use them as a zesty topping for salads, soups, or even as a salsa dipper. Expand your snacking horizons with Inka Crops Chile Picante Crunchy Giant Corn and embark on a flavorful adventure that will leave your taste buds wanting more.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/362742795.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/362742795.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -73,8 +88,11 @@
     "brand": "Suja Organic",
     "category": "Apples",
     "description": "Immunity elderberry shot with zinc & probiotics. 150% DV Vitamin C from acerola cherry. 100% DV Zinc. USDA Organic. Certified Organic by CCOF. Live probiotics to support immune health (As part of a balanced diet and healthy lifestyle). High Pressure Certified. Sujajuice.com/HPP.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/302856342.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/302856342.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -86,8 +104,11 @@
     "brand": "Stella & Chewy's",
     "category": "Dog Food",
     "description": "Stella & Chewy\u2019s Dandy Lamb Dinner Patties provide a protein-packed, grain-free diet made with 95% grass-fed lamb, organs, and bone, ideal for dogs of all breeds and life stages. These freeze-dried patties deliver the benefits of raw nutrition in a convenient, easy-to-serve format. The formula is enriched with organic fruits and vegetables for added nutrients and antioxidants, promoting overall health and vitality.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/352920722.png",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/352920722.png"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -98,9 +119,12 @@
     "api_name": "Benadryl Itch Stopping Cream, Extra Strength, For Ages 2+ - 1 Ounce",
     "brand": "Benadryl",
     "category": "First Aid",
-    "description": "Benadryl itch relief cream provides extra strength itch relief for insect bites and rashes due to posion ivy, oak & sumac. Also provides pain and itch relief for sunburn, minor cuts, scrapes and minor skin irritations. Histamine blocking itch relief. Contains Diphenhydramine HCL and Zinc acetate. 1 oz tube.",
-    "images": [],
-    "image_count": 0,
+    "description": "Benadryl Extra-Strength Anti-Itch Relief Cream provides relief from skin itching. Made with 2% diphenhydramine hydrochloride topical analgesic and 0.1% zinc acetate skin protectant, this topical cream temporarily relieves itching associated with insect bites, sunburn, scrapes, minor skin irritations, burns, and cuts. It contains a histamine blocker and dries the oozing and weeping of poison ivy, poison oak, and poison sumac. Extra Strength Benadryl Itch Stopping Cream is intended for ages two and up.",
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/656919.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/656919.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -112,8 +136,11 @@
     "brand": "Simply Gum",
     "category": "Candy & Chocolate",
     "description": "DID YOU KNOW THAT OTHER GUMS CONTAIN PLASTIC? Not ours! We use a natural tree-sap (chicle) base instead. It's natural and biodegradable, making our gum not only better for you but also for the environment. We're proud to be made in the USA, where our gum chefs craft the highest quality ingredients into the finest gum available. Each piece is unique, with a softer and more subtle flavor than typical gum. Refreshing and subtly sweet, our natural Peppermint chewing gum is simply delicious. We\u2019ve been told that it's an on-the-go essential, perfect to grab before a meeting, after lunch, or when you need a little kick.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/375975510.png",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/375975510.png"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -125,8 +152,11 @@
     "brand": "POM Wonderful",
     "category": "Juice",
     "description": "Take the sweet, tart taste of pomegranates&nbsp;to go. Known for unique antioxidants POM POMS Pomegranate Fresh Arils are California-grown and in season&nbsp;October through January.&nbsp;So get ready to pounce.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/93302855.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/93302855.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -134,12 +164,15 @@
     "ean": "0753656710990",
     "expected_name": "Think Thin Chunky Chocolate Pe",
     "expected_size": "",
-    "api_name": "Think Thin Protein & Fiber Bar Chunky Chocolate Peanut",
+    "api_name": "Think Thin Bar, Protein & Fiber, Chunky Chocolate Peanut",
     "brand": "Think",
     "category": "Motor Vehicle Roll Cages & Bars",
     "description": "Rich roasted peanuts, in a smooth creamy dark chocolate. A perfect balance any time of day.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/94611683.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/94611683.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -151,8 +184,11 @@
     "brand": "The Republic of Tea",
     "category": "Tea & Infusions",
     "description": "Certified Organic China Green Tea. Highest quality leaves from the birthplace of tea create a nutty yet distant sweetness with an emerald hue. Take enjoyment of distant sweetness of this fresh, bright cup. Organic, Non-GMO Project Verified, Kosher, Gluten Free, Sugar Free, Carb Free, Zero Calorie.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/84567879.png",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/84567879.png"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -164,8 +200,11 @@
     "brand": "Vital Proteins",
     "category": "Vitamins & Supplements",
     "description": "Non-Dairy Coffee Creamer ---- A delicious, dairy-free creamer alternative boosted with collagen nutrition. Health Truth ---- Our collagen creamers are made without dairy, gluten and free of any added sugars. You'll notice there is less than1g of sugar per serving that is found naturally in the coconut milk powder. Now for the Delicious Goodness ---- Add our Collagen Creamer to coffee for a sweet addition to your morning routine or mix it into granola or cereal for a unique spin on your favorite breakfast staples.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/223170132.png",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/223170132.png"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -177,8 +216,11 @@
     "brand": "Chobani",
     "category": "Yogurt",
     "description": "Chobani\u00ae Coffee Blended Greek Yogurt is crafted from farm-fresh local milk, making it an excellent source of protein. Nonfat, lowfat, and whole milk options are the perfect base for breakfast bowls, smoothies, and more. Rich, flavorful coffee blended into delicious Chobani\u00ae Greek Yogurt. Crafted with only natural ingredients. 5.3oz.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/302762705.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/302762705.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   },
   {
@@ -190,8 +232,11 @@
     "brand": "Drumroll",
     "category": "Donuts",
     "description": "Looking for indulgent chocolate donuts made with plant-based ingredients? You're in luck! Drumroll Snacks Mini Double Chocolate Donuts are not only glazed and super yummy but also packed with goodness. These delectable treats boast 10 grams of plant protein, making these doughnuts a satisfying and guilt-free snack option. Plus, with only 1 gram of sugar, you can enjoy the rich, chocolatey flavor without worrying about excess sweetness. Drumroll Snacks has crafted these mini donuts with care, ensuring that they are made from high-quality, plant-based ingredients. Whether you're craving a sweet treat to satisfy your chocolate cravings or need a quick energy boost, these Mini Double Chocolate Donuts are the perfect choice. Indulge in the irresistible taste of Drumroll Snacks Mini Double Chocolate Donuts and experience the perfect combination of rich chocolate flavor and wholesome ingredients. With each bite, you'll savor the deliciousness while knowing that you're nourishing your body with plant-based goodness. Each 2.6 oz. package contains 3 mini donuts.",
-    "images": [],
-    "image_count": 0,
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/369305304.jpeg",
+    "images": [
+      "https://go-upc.s3.amazonaws.com/images/369305304.jpeg"
+    ],
+    "image_count": 1,
     "success": true
   }
 ]

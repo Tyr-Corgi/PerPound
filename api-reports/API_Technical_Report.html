@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Technical Analysis Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .product-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .product-header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.8em;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .upc-code {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .api-card {
+            background: #f8f9fa;
+            border-left: 5px solid;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .api-card.go-upc {
+            border-left-color: #9e9e9e;
+        }
+        
+        .api-card.upcitemdb {
+            border-left-color: #ff9800;
+        }
+        
+        .api-card.barcode-lookup {
+            border-left-color: #4caf50;
+        }
+        
+        .api-card.apify {
+            border-left-color: #2196f3;
+        }
+        
+        .api-header {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .detail-value {
+            color: #333;
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            word-break: break-all;
+        }
+        
+        .json-payload {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.5;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .metric {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: 600;
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #c62828;
+        }
+        
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 API Technical Analysis Report</h1>
+            <p style="font-size: 1.2em; color: #666; margin-top: 10px;">Request Payloads, Response Payloads & Performance Metrics</p>
+            <div class="timestamp">Generated: 2025-11-04 14:21:57</div>
+        </header>
+
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-title">Stonewall Kitchen Waffle Cookie</div>
+                <div class="upc-code">UPC: 711381332580</div>
+            </div>
+
+            <div class="api-card go-upc">
+                <div class="api-header">Go-UPC API</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 1163.78ms</span>
+                    <span class="metric">📦 1,135 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://go-upc.com/api/v1/code/711381332580</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Bearer token in Authorization header</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Authorization": "Bearer ***API_KEY***",
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "711381332580",
+  "codeType": "UPC",
+  "product": {
+    "name": "Stonewall Kitchen Waffle Cookie, Maple Brown Butter",
+    "description": "Maple-flavored Dutch waffle cookie with a gooey sea salt caramel center Traditionally known as stroopwafels Enjoy one as the Dutch do by letting it soften over a hot cup of tea or cocoa It all started in 1991 at a local farmers' market with a few dozen items that we'd finished hand-labeling only hours before. Fast-forward to today and Stonewall Kitchen is now home to an ever-growing family of like-minded lifestyle brands! Expertly made with premium ingredients, our products are the result of decades spent dreaming up, testing and producing only the very best in specialty foods and fine home living.",
+    "region": "USA or Canada",
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/378313627.webp",
+    "brand": "Stonewall Kitchen",
+    "specs": [
+      [
+        "Countries",
+        "United States"
+      ]
+    ],
+    "category": "Cookies",
+    "categoryPath": [
+      "Food, Beverages & Tobacco",
+      "Food Items",
+      "Bakery",
+      "Cookies"
+    ],
+    "upc": 711381332580,
+    "ean": 711381332580
+  },
+  "barcodeUrl": "https://go-upc.com/barcode/711381332580",
+  "inferred": false
+}</div>
+            </div>
+
+            <div class="api-card upcitemdb">
+                <div class="api-header">UPCitemdb</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 1084.34ms</span>
+                    <span class="metric">📦 52 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://api.upcitemdb.com/prod/trial/lookup?upc=711381332580</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Trial API (no key required)</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "OK",
+  "total": 0,
+  "offset": 0,
+  "items": []
+}</div>
+            </div>
+
+        </div>
+
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-title">Chobani Coffee Greek Yogurt</div>
+                <div class="upc-code">UPC: 818290019592</div>
+            </div>
+
+            <div class="api-card go-upc">
+                <div class="api-header">Go-UPC API</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 713.32ms</span>
+                    <span class="metric">📦 1,229 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://go-upc.com/api/v1/code/818290019592</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Bearer token in Authorization header</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Authorization": "Bearer ***API_KEY***",
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "818290019592",
+  "codeType": "UPC",
+  "product": {
+    "name": "Chobani Yogurt, Reduced Fat, Greek, Blended, Coffee - 5.3 Ounce",
+    "description": "Chobani\u00ae Coffee Blended Greek Yogurt is crafted from farm-fresh local milk, making it an excellent source of protein. Nonfat, lowfat, and whole milk options are the perfect base for breakfast bowls, smoothies, and more. Rich, flavorful coffee blended into delicious Chobani\u00ae Greek Yogurt. Crafted with only natural ingredients. 5.3oz.",
+    "region": "USA or Canada",
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/302762705.jpeg",
+    "brand": "Chobani",
+    "specs": [
+      [
+        "Ingredients",
+        "Cultured Reduced Fat Milk, Cane Sugar, Water, Fruit Pectin, Fruit Juice Concentrate (For Color), Natural Flavors, Guar Gum, Coffee Extract, Lemon Juice Concentrate' '"
+      ]
+    ],
+    "category": "Yogurt",
+    "categoryPath": [
+      "Food, Beverages & Tobacco",
+      "Food Items",
+      "Dairy Products",
+      "Yogurt"
+    ],
+    "ingredients": {
+      "text": "Cultured Reduced Fat Milk, Cane Sugar, Water, Fruit Pectin, Fruit Juice Concentrate (For Color), Natural Flavors, Guar Gum, Coffee Extract, Lemon Juice Concentrate"
+    },
+    "upc": 818290019592,
+    "ean": 818290019592
+  },
+  "barcodeUrl": "https://go-upc.com/barcode/818290019592",
+  "inferred": false
+}</div>
+            </div>
+
+            <div class="api-card upcitemdb">
+                <div class="api-header">UPCitemdb</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 1055.66ms</span>
+                    <span class="metric">📦 1,201 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://api.upcitemdb.com/prod/trial/lookup?upc=818290019592</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Trial API (no key required)</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "OK",
+  "total": 1,
+  "offset": 0,
+  "items": [
+    {
+      "ean": "0818290019592",
+      "title": "100 X RJ45 Coupler CAT5 CAT6 5E 8P8C Network Ethernet Connector Adapter Joiner",
+      "description": "100 X RJ45 Coupler CAT5 CAT6 5E 8P8C Network Ethernet Connector Adapter Joiner condition: New Connector A: RJ-45 RJ45 Type: Plug, Jack MPN: Does Not Apply Brand: LAswitch Connection Type: Ethernet Cat 5,6,5e, RJ45 Quantity: 100 Pieces Per Bid",
+      "upc": "818290019592",
+      "brand": "laswitch",
+      "model": "C00-969252000201557",
+      "color": "",
+      "size": "",
+      "dimension": "",
+      "weight": "",
+      "category": "Electronics",
+      "currency": "",
+      "lowest_recorded_price": 34.06,
+      "highest_recorded_price": 36.51,
+      "images": [
+        "https://tshop.r10s.com/05c/cc3/f427/beac/c02d/045f/8362/11c7ea9b110242ac110003.jpg?_ex=512x512"
+      ],
+      "offers": [
+        {
+          "merchant": "Rakuten(Buy.com)",
+          "domain": "rakuten.com",
+          "title": "100 X RJ45 Coupler CAT5 CAT6 5E 8P8C Network Ethernet Connector Adapter Joiner",
+          "currency": "",
+          "list_price": "",
+          "price": 34.06,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=y2u233z2x213e494t2&tid=1&seq=1762291273&plt=f720b64e5cbd88dd963c504c921e082e",
+          "updated_t": 1586969744
+        }
+      ]
+    }
+  ]
+}</div>
+            </div>
+
+        </div>
+
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-title">Inka Giant Corn Chile Picante</div>
+                <div class="upc-code">UPC: 819046000420</div>
+            </div>
+
+            <div class="api-card go-upc">
+                <div class="api-header">Go-UPC API</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 837.46ms</span>
+                    <span class="metric">📦 1,768 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://go-upc.com/api/v1/code/819046000420</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Bearer token in Authorization header</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Authorization": "Bearer ***API_KEY***",
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "819046000420",
+  "codeType": "UPC",
+  "product": {
+    "name": "Inka Crops Chile Picante Roasted Giant Corn, 4 Ounce -- 6 Per Case",
+    "description": "Experience the bold and fiery flavors of Inka Crops Chile Picante Crunchy Giant Corn. This case contains six 4 oz packages of this irresistible snack. Each bite is a fusion of crunch and spice, combining the satisfying texture of giant corn kernels with a tantalizing Chile picante seasoning. These crunchy corn snacks are bursting with flavor, perfect for those who crave a spicy kick. Made from premium and all-natural ingredients, Inka Crops Crunchy Giant Corn offers a delicious and addictive snacking experience. Enjoy them on their own or use them as a zesty topping for salads, soups, or even as a salsa dipper. Expand your snacking horizons with Inka Crops Chile Picante Crunchy Giant Corn and embark on a flavorful adventure that will leave your taste buds wanting more.",
+    "region": "USA or Canada",
+    "imageUrl": "https://go-upc.s3.amazonaws.com/images/362742795.jpeg",
+    "brand": "Inka Crops",
+    "specs": [
+      [
+        "Package Quantity",
+        " 6"
+      ],
+      [
+        "Form",
+        " Pieces"
+      ],
+      [
+        "State of Readiness",
+        " Ready To Eat"
+      ],
+      [
+        "Net weight",
+        " 24 Ounces"
+      ],
+      [
+        "Pre-package preparation",
+        " Salted"
+      ],
+      [
+        "Country of Origin",
+        " United States"
+      ]
+    ],
+    "category": "Chips",
+    "categoryPath": [
+      "Food, Beverages & Tobacco",
+      "Food Items",
+      "Snack Foods",
+      "Chips"
+    ],
+    "ingredients": {
+      "text": "Giant Corn, High Oleic Sunflower Oil, Seasoning Powder (Corn Maltodextrin, Salt, Chili Pepper Cayenne Pepper, Garlic, Paprika, Acidity Regulator [citric Acid], Oregano, Anticaking Agent [silicon Dioxide], Color [paprika Oleoresin], Capsicum Oleoresin)."
+    },
+    "upc": 819046000420,
+    "ean": 819046000420
+  },
+  "barcodeUrl": "https://go-upc.com/barcode/819046000420",
+  "inferred": false
+}</div>
+            </div>
+
+            <div class="api-card upcitemdb">
+                <div class="api-header">UPCitemdb</div>
+
+                <div class="success">✅ Successful Response</div>
+                <div>
+                    <span class="metric">⏱️ 1252.11ms</span>
+                    <span class="metric">📦 4,697 bytes</span>
+                    <span class="metric">📊 Status: 200</span>
+                </div>
+
+                <div class="section-title">📤 REQUEST DETAILS</div>
+                <div class="detail-grid">
+                    <div class="detail-label">Method:</div>
+                    <div class="detail-value">GET</div>
+                    <div class="detail-label">URL:</div>
+                    <div class="detail-value">https://api.upcitemdb.com/prod/trial/lookup?upc=819046000420</div>
+                    <div class="detail-label">Authentication:</div>
+                    <div class="detail-value">Trial API (no key required)</div>
+                </div>
+
+                <div class="section-title">📋 REQUEST HEADERS</div>
+                <div class="json-payload">{
+  "Content-Type": "application/json"
+}</div>
+                <div class="section-title">📥 RESPONSE PAYLOAD</div>
+                <div class="json-payload">{
+  "code": "OK",
+  "total": 1,
+  "offset": 0,
+  "items": [
+    {
+      "ean": "0819046000420",
+      "title": "ROASTED GIANT CORN, CHILE PICANTE",
+      "description": "INGREDIENTS: CORN, PALM OIL, SALT, MALTODEXTRIN (STABILIZER), CHILI PEPPER POWDER, CAYENNE PEPPER POWDER, GARLIC POWDER, PAPRIKA POWDER, CITRIC ACID (ACIDITY REGULATOR), OREGANO, SILICON DIOXIDE (ANTICAKING AGENT), PAPRIKA OLEORESIN AND CAPSICUM OLEORESIN.",
+      "upc": "819046000420",
+      "brand": "Inka Corn",
+      "model": "BG14483",
+      "color": "Stainless steel",
+      "size": "",
+      "dimension": "0.8 X 4.9 X 7.5 inches",
+      "weight": "1.89 pounds",
+      "category": "Food, Beverages & Tobacco > Food Items > Snack Foods > Popcorn",
+      "lowest_recorded_price": 0,
+      "highest_recorded_price": 100,
+      "images": [
+        "https://i5.walmartimages.com/asr/2e069fb7-d45f-44c8-9f9e-0987fa3e2475.db91c8eedeaaa1dcc1c1e543d4412b0a.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff",
+        "http://ct.mywebgrocer.com/legacy/productimagesroot/DJ/5/595405.jpg",
+        "https://d29pz51ispcyrv.cloudfront.net/images/I/VEuMupZ9yLgb8o452.MD256.JPEG",
+        "http://site.unbeatablesale.com/EB032/spdsp18672.gif",
+        "https://tshop.r10s.com/4bb/5e4/57ca/9db5/205b/e185/ceb8/116de7a56654ab3a29581c.gif?_ex=512x512",
+        "http://i5.walmartimages.ca/images/Large/000/420/999999-819046000420.jpg",
+        "http://8016235491c6828f9cae-6b0d87410f7cc1525cc32b79408788c4.r96.cf2.rackcdn.com/243/51437331_1.jpg",
+        "https://i14.onbuy.com/product/66a2c04ebf9d4eaf901a80e66416d51d-l12363927.jpg"
+      ],
+      "offers": [
+        {
+          "merchant": "UnbeatableSale.com",
+          "domain": "unbeatablesale.com",
+          "title": "Inka Corn - Roasted With Chile Picante 4-Ounce -Pack of 6",
+          "currency": "",
+          "list_price": 37.84,
+          "price": 29.11,
+          "shipping": "US:::6.89 USD",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=v2o233y223037444&tid=1&seq=1762291277&plt=63079b1da70c6364fa3d749d81d259c8",
+          "updated_t": 1737467193
+        },
+        {
+          "merchant": "Rakuten(Buy.com)",
+          "domain": "rakuten.com",
+          "title": "Inka Crops Inka Corn - Roasted With Chile Picante 4-Ounce -Pack of 6",
+          "currency": "",
+          "list_price": "",
+          "price": 18.58,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=u2p2x2u2x2y27484t2&tid=1&seq=1762291277&plt=e77997b1b465a44c82d24aa1cb9c4e13",
+          "updated_t": 1584544200
+        },
+        {
+          "merchant": "Wal-Mart.com",
+          "domain": "walmart.com",
+          "title": "Inka Crops Inka Corn Chile Picante  4 Oz  Pack Of 6",
+          "currency": "",
+          "list_price": 36.16,
+          "price": 29.89,
+          "shipping": "Free Shipping",
+          "condition": "New",
+          "availability": "Out of Stock",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=v2r2030323y2b4a4y2&tid=1&seq=1762291277&plt=28b43640839f38994e7d2c2e2de01500",
+          "updated_t": 1727114875
+        },
+        {
+          "merchant": "WalMart Canada",
+          "domain": "walmart.ca",
+          "title": "Inka Crops Chili Picante Inka Corn Roasted Giant Corn",
+          "currency": "CAD",
+          "list_price": "",
+          "price": 3.27,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=v2r213w2w203c4c4u2&tid=1&seq=1762291277&plt=a4421ce221a6a6dffe648e629a7962dd",
+          "updated_t": 1525985848
+        },
+        {
+          "merchant": "Albertsons",
+          "domain": "albertsons.com",
+          "title": "Inka Crops - Inka Corn Gourmet Roasted Corn - Chile Picante 4.00 oz",
+          "currency": "",
+          "list_price": "",
+          "price": 0,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=v2q23303x2137484y2&tid=1&seq=1762291277&plt=e59d83ca42eee360f9085641980b1c43",
+          "updated_t": 1484640828
+        },
+        {
+          "merchant": "Pricefalls.com",
+          "domain": "pricefalls.com",
+          "title": "Inka Crops Inka Corn Roasted With Chile Picante 4-Ounce -Pack Of 6",
+          "currency": "",
+          "list_price": "",
+          "price": 15.41,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=v2q253w2235394c4z2&tid=1&seq=1762291277&plt=a0d7c532e765d7e2a7d0cbfa4d8da9f8",
+          "updated_t": 1484914510
+        },
+        {
+          "merchant": "MassGenie",
+          "domain": "massgenie.com",
+          "title": "Inka Crops Chile Picante - Gluten Free - Case of 6 - 4 oz.",
+          "currency": "",
+          "list_price": "",
+          "price": 17.7,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=w2w24323w26384c4w2&tid=1&seq=1762291277&plt=4edb86f68369eae6c8b7b02ce7eca439",
+          "updated_t": 1759832549
+        },
+        {
+          "merchant": "OnBuy.com",
+          "domain": "onbuy.com",
+          "title": "Inka Crops Inka Corn - Roasted With Chile Picante 4-Ounce -Pack of 6",
+          "currency": "GBP",
+          "list_price": "",
+          "price": 18.21,
+          "shipping": "GB:Mainland UK:Standard:15.00 GBP",
+          "condition": "New",
+          "availability": "",
+          "link": "https://www.upcitemdb.com/norob/alink/?id=x2x2z2x2z253a4b4q2&tid=1&seq=1762291277&plt=61477cdcaf1f3fc2bc5683457dc2126d",
+          "updated_t": 1571465937
+        }
+      ],
+      "asin": "B001HTIV68",
+      "elid": "256268676074"
+    }
+  ]
+}</div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

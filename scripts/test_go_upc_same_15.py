@@ -92,10 +92,13 @@ def main():
             print(f"    Brand: {product_info.get('brand', 'N/A')}")
             print(f"    Category: {product_info.get('category', 'N/A')}")
             
-            images = product_info.get('images', [])
+            # Go-UPC uses 'imageUrl' (singular) not 'images' (plural)
+            image_url = product_info.get('imageUrl', '')
+            images = [image_url] if image_url else []
+            
             print(f"    Images: {len(images)} available")
             if images:
-                print(f"    First Image: {images[0]}")
+                print(f"    Image URL: {images[0]}")
             
             results.append({
                 'upc': product['upc'],
@@ -106,6 +109,7 @@ def main():
                 'brand': product_info.get('brand', ''),
                 'category': product_info.get('category', ''),
                 'description': product_info.get('description', ''),
+                'imageUrl': image_url,
                 'images': images,
                 'image_count': len(images),
                 'success': True
